@@ -11,3 +11,5 @@ RUN packer -S --noconfirm update-mirrorlist
 ADD update-mirrorlist.conf /etc/pacman.d/update-mirrorlist.conf
 RUN update-mirrorlist
 RUN pacman -Syu --noconfirm base-devel
+
+ONBUILD RUN pacman -Syu
